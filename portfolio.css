@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Serif Pro', serif;
+    background-color: whitesmoke;
+}
+
+.navbar {
+    background: #ffffff;
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 0 25px;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+.nav-links a.active {
+    color: #af3120;
+    border-bottom: 2px solid #af3120;
+    padding-bottom: 5px;
+}
+
+
+.hero-banner {
+    height: 75vh; 
+    background: url('portfolio.png') no-repeat center bottom;
+    background-size: cover;
+}
+
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(175, 49, 32, 0.9); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-item:hover .gallery-hover {
+    opacity: 1;
+}
+
+.gallery-hover h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gallery-hover p {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+    .hero-banner { height: 50vh; }
+    .gallery-grid { grid-template-columns: 1fr; }
+}
